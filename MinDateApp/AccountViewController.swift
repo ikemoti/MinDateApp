@@ -16,6 +16,7 @@ class AccountViewController: UIViewController {
     
     @IBOutlet weak var Password: UITextField!
     
+    
     var auth:Auth!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class AccountViewController: UIViewController {
             auth.currentUser?.reload(completion: { error in
                 if error == nil {
                     if self.auth.currentUser?.isEmailVerified == true {
-                        self.performSegue(withIdentifier: "Timeline", sender: self.auth.currentUser!)
+                        self.performSegue(withIdentifier: "TimeLine", sender: self.auth.currentUser!)
                     } else if self.auth.currentUser?.isEmailVerified == false {
                         let alert = UIAlertController(title: "確認用メールを送信しているので確認をお願いします。", message: "まだメール認証が完了していません。", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -42,7 +43,7 @@ class AccountViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Timeline" {
+        if segue.identifier == "TimeLine" {
             let nextViewController = segue.destination as!TimeLineViewController
             let user = sender as! User
             nextViewController.me = AppUser(data: ["userID": user.uid])
