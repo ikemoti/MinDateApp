@@ -41,7 +41,15 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
 
     
-    @IBAction func toukou() {
+    @IBAction func AddVC() {
+        performSegue(withIdentifier: "ADD", sender: me)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as!AddViewController
+        destination.me = sender as! AppUser
+        
     }
     /*
     // MARK: - Navigation

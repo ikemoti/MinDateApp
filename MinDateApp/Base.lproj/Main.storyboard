@@ -68,7 +68,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <state key="normal" title="投稿"/>
                                 <connections>
-                                    <action selector="toukou" destination="vJ3-jb-dHC" eventType="touchUpInside" id="omZ-Ie-D8f"/>
+                                    <action selector="AddVC" destination="vJ3-jb-dHC" eventType="touchUpInside" id="gOf-ZZ-hNm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,11 +77,42 @@
                     </view>
                     <connections>
                         <outlet property="tableview" destination="8eh-nn-bHi" id="ayn-vV-ndk"/>
+                        <segue destination="grl-dl-RYt" kind="presentation" identifier="ADD" modalPresentationStyle="fullScreen" id="Nsb-HY-vYR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7M-Oa-Wpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="135.9375"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="I67-YT-aEl">
+            <objects>
+                <viewController id="grl-dl-RYt" customClass="AddViewController" customModule="MinDateApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wLP-oL-epG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IEs-rJ-PKw">
+                                <rect key="frame" x="87" y="226" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2g-ry-XDZ">
+                                <rect key="frame" x="184" y="595" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JmN-sf-zy9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkw-L8-Bv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="159"/>
         </scene>
     </scenes>
 </document>
