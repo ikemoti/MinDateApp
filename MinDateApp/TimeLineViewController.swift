@@ -21,13 +21,28 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        database = Firestore.firestore()
         tableview.delegate = self
         tableview.dataSource = self
+        
 
         // Do any additional setup after loading the view.
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        database.collection("posts").getDocuments { (snapshot, error) in
+            if error == nil, let snapshot = snapshot {
+                self.postArray = []
+                for document in snapshot.documents {
+                    let data = document.data()
+                    let post = Post(data: data)
+                    self.postArray.append(post)
+                }
+                self.tableview.reloadData()
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count
     }

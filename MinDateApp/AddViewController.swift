@@ -7,26 +7,53 @@
 //
 
 import UIKit
+import Firebase
 
 class AddViewController: UIViewController {
 
     
     var me :AppUser!
+    var database:Firestore!
+    
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextView()
+         database = Firestore.firestore()
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func postcontent() {
+        let content = textView.text!
+        let saveDocument = Firestore.firestore().collection("posts").document()
+        saveDocument.setData([
+            "content": content,
+            "postID": saveDocument.documentID,
+            "senderID": me.userID,
+            "createdAt": FieldValue.serverTimestamp(),
+            "updatedAt": FieldValue.serverTimestamp()
+        ]) { error in
+            if error == nil {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
-    */
+    
+    func setupTextView() {
+        let toolBar = UIToolbar()
+        let flexibleSpaceBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        toolBar.items = [flexibleSpaceBarButton, doneButton]
+        toolBar.sizeToFit()
+        textView.inputAccessoryView = toolBar
+    }
 
+    @objc func dismissKeyboard() {
+    textView.resignFirstResponder()
+
+   
+}
 }
