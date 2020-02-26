@@ -40,8 +40,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="Password" destination="Gab-N2-2ih" id="pJV-lX-etp"/>
                         <outlet property="mailadress" destination="jM0-Pg-scK" id="uTS-jd-D3g"/>
-                        <outlet property="password" destination="Gab-N2-2ih" id="GxS-Iy-Wq1"/>
                         <segue destination="vJ3-jb-dHC" kind="show" identifier="TimeLine" id="XjG-fb-Czf"/>
                     </connections>
                 </viewController>
