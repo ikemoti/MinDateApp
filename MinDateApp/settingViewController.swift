@@ -7,16 +7,34 @@
 //
 
 import UIKit
+import Firebase
 
-class settingViewController: UIViewController {
+class settingViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    var me :AppUser!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        usernameTextField.delegate = self
+        usernameTextField.text = me.userName
+        
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameTextField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func changeusername() {
+        let newUserName = usernameTextField.text!
+               Firestore.firestore().collection("users").document(me.userID).setData([
+                   "userName": newUserName
+               ], merge: true)
+               }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -27,4 +45,4 @@ class settingViewController: UIViewController {
     }
     */
 
-}
+

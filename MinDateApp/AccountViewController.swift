@@ -46,9 +46,15 @@ class AccountViewController: UIViewController {
         if segue.identifier == "TimeLine" {
             let nextViewController = segue.destination as!tabViewController
             let les = nextViewController.viewControllers![0] as!TimeLineViewController
+            let gosettingviewcontroller = segue.destination as! tabViewController
+            let res = gosettingviewcontroller.viewControllers![1] as!settingViewController
+            
+            
             let user = sender as! User
             
+            
             les.me = AppUser(data: ["userID": user.uid])
+            res.me = AppUser(data: ["userID": user.uid])
          
             
         }
