@@ -12,9 +12,10 @@ import Firebase
 class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
 
-    var me:AppUser!
+    var me: AppUser!
     var database: Firestore!
     var postArray: [Post] = []
+    
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -24,6 +25,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         database = Firestore.firestore()
         tableview.delegate = self
         tableview.dataSource = self
+        print (me)
         
 
         // Do any additional setup after loading the view.
@@ -42,6 +44,18 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 self.tableview.reloadData()
             }
         }
+        //ユーザーコレクションの中にme.userId をキーとして保存
+        database.collection("users").document(me.userID).setData([
+                   "userID": me.userID
+                   ], merge: true)
+        
+        //AppUserをデータベースから取得する
+        database.collection("users").document(me.userID).getDocument { (snapshot, error) in
+        if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+            self.me = AppUser(data: data)
+               
+    }
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count
@@ -50,20 +64,31 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
          cell.textLabel?.text = postArray[indexPath.row].content
-        return cell
         
+        
+        // 追加。それぞれの記事を投稿したユーザーをPostクラスのsenderIDを元に取得している。
+        database.collection("users").document(postArray[indexPath.row].senderID).getDocument { (snapshot, error) in
+            if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+                let appUser = AppUser(data: data)
+                print(appUser.userName)
+                cell.detailTextLabel?.text = appUser.userName // 今回は、ユーザー名をdetailTextLabelに表示。
+            }
+        }
+        return cell
     }
     
-
-    
-    @IBAction func AddVC() {
+    @IBAction func addVC() {
         performSegue(withIdentifier: "ADD", sender: me)
     }
     
     
+    
+  
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as!AddViewController
-        destination.me = sender as! AppUser
+        destination.me = sender as!AppUser
         
     }
     /*

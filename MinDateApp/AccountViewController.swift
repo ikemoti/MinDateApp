@@ -32,7 +32,7 @@ class AccountViewController: UIViewController {
                 if error == nil {
                     if self.auth.currentUser?.isEmailVerified == true {
                         self.performSegue(withIdentifier: "TimeLine", sender: self.auth.currentUser!)
-                    } else if self.auth.currentUser?.isEmailVerified == false {
+                                            } else if self.auth.currentUser?.isEmailVerified == false {
                         let alert = UIAlertController(title: "確認用メールを送信しているので確認をお願いします。", message: "まだメール認証が完了していません。", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
@@ -44,9 +44,19 @@ class AccountViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TimeLine" {
-            let nextViewController = segue.destination as!TimeLineViewController
+            let nextViewController = segue.destination as!tabViewController
+            let les = nextViewController.viewControllers![0] as!TimeLineViewController
+            let gosettingviewcontroller = segue.destination as! tabViewController
+            let res = gosettingviewcontroller.viewControllers![1] as!settingViewController
+            
+            
             let user = sender as! User
-            nextViewController.me = AppUser(data: ["userID": user.uid])
+            
+            
+            les.me = AppUser(data: ["userID": user.uid])
+            res.me = AppUser(data: ["userID": user.uid])
+         
+            
         }
     }
     
