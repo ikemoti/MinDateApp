@@ -12,9 +12,10 @@ import Firebase
 class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
 
-    var me:AppUser!
+    var me: AppUser!
     var database: Firestore!
     var postArray: [Post] = []
+    
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -24,6 +25,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         database = Firestore.firestore()
         tableview.delegate = self
         tableview.dataSource = self
+        print (me)
         
 
         // Do any additional setup after loading the view.
@@ -54,16 +56,18 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
-
-    
-    @IBAction func AddVC() {
+    @IBAction func addVC() {
         performSegue(withIdentifier: "ADD", sender: me)
     }
     
     
+    
+  
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as!AddViewController
-        destination.me = sender as! AppUser
+        destination.me = sender as!AppUser
         
     }
     /*
