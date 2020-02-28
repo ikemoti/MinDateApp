@@ -9,28 +9,56 @@
 import UIKit
 import Firebase
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController,UITextFieldDelegate{
 
     
     var me :AppUser!
     var database:Firestore!
     
-    @IBOutlet weak var textView: UITextView!
+    
+    @IBOutlet weak var dateName: UITextField!
+    
+    
+    @IBOutlet weak var Place1: UITextField!
+    @IBOutlet weak var Place2: UITextField!
+    
+    @IBOutlet weak var Place3: UITextField!
+    
+    @IBOutlet weak var Place4: UITextField!
+    
+    @IBOutlet weak var Place5: UITextField!
+    
+    
+    @IBOutlet weak var Memo: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextView()
          database = Firestore.firestore()
+        dateName.delegate = self
 
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func postcontent() {
-        let content = textView.text!
+        let contentMemo = Memo.text!
+        let DateName = dateName.text!
+        let place1 = Place1.text!
+        let place2 = Place2.text!
+        let place3 = Place3.text!
+        let place4 = Place4.text!
+        let place5 = Place5.text!
+        
         let saveDocument = Firestore.firestore().collection("posts").document()
         saveDocument.setData([
-            "content": content,
+            "DateName":DateName,
+            "place1" :place1,
+            "place2" :place2,
+            "place3" :place3,
+            "place4" :place4,
+            "place5" :place5,
+            "contentMemo": contentMemo,
             "postID": saveDocument.documentID,
             "senderID": me.userID,
             "createdAt": FieldValue.serverTimestamp(),
@@ -48,12 +76,17 @@ class AddViewController: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
         toolBar.items = [flexibleSpaceBarButton, doneButton]
         toolBar.sizeToFit()
-        textView.inputAccessoryView = toolBar
+        Memo.inputAccessoryView = toolBar
     }
 
     @objc func dismissKeyboard() {
-    textView.resignFirstResponder()
-
-   
-}
+    Memo.resignFirstResponder()
+        }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dateName.resignFirstResponder()
+        return true
+    }
+    
+    
 }
