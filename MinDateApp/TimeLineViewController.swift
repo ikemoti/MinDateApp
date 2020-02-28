@@ -63,7 +63,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-         cell.textLabel?.text = postArray[indexPath.row].content
+         cell.textLabel?.text = postArray[indexPath.row].DateName
         
         
         // 追加。それぞれの記事を投稿したユーザーをPostクラスのsenderIDを元に取得している。
