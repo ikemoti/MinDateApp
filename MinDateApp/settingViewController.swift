@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
+import FirebaseFirestore
 
 class settingViewController: UIViewController,UITextFieldDelegate {
 
@@ -15,12 +17,56 @@ class settingViewController: UIViewController,UITextFieldDelegate {
     
     var me :AppUser!
     
+    @IBOutlet weak var imageView: UIImageView!{
+        didSet {
+            // デフォルトの画像を表示する
+            imageView.image = UIImage(named: "no_image.png")
+        }
+    }
+    let imagePicker = UIImagePickerController()
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
         usernameTextField.text = me.userName
-        
+        imageView.image = me.userImage as! UIImage
     }
+   
+    
+    @IBAction func selectImage(_ sender: Any) {
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+        saveToFireStore()
+        print(imageView.image )
+       }
+       
+    
+   
+     fileprivate   func upload(completed: @escaping(_ url: String?) -> Void) {
+          let date = NSDate()
+          let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
+          let storageRef = Storage.storage().reference().child("images").child("\(currentTimeStampInSecond).jpg")
+          let metaData = StorageMetadata()
+          metaData.contentType = "image/jpg"
+          if let uploadData = self.imageView.image?.jpegData(compressionQuality: 0.9) {
+              storageRef.putData(uploadData, metadata: metaData) { (metadata , error) in
+                  if error != nil {
+                    completed(nil)
+                      print("error: \(error?.localizedDescription)")
+                  }
+                  storageRef.downloadURL(completion: { (url, error) in
+                      if error != nil {
+                        completed(nil)
+                          print("error: \(error?.localizedDescription)")
+                      }
+                      completed("url: \(url?.absoluteString)")
+                  })
+              }
+          }
+      }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         usernameTextField.resignFirstResponder()
@@ -33,16 +79,50 @@ class settingViewController: UIViewController,UITextFieldDelegate {
                    "userName": newUserName
                ], merge: true)
                }
-    }
+   fileprivate func saveToFireStore(){
+       var data: [String : Any] = [:]
+       upload(){ url in
+           guard let url = url else {return }
+           data["image"] = url
+           Firestore.firestore().collection("images").document().setData(data){ error in
+               if error != nil {
+                   print("error: \(error?.localizedDescription)")
+               }
+               print("image saved!")
+           }
+       }
+   }
+
+   
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+//写真を選んだ後に呼ばれる処理
+extension settingViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
+            if let pickedImage =  info[.originalImage] as? UIImage {
+                imageView.contentMode = .scaleAspectFit
+                imageView.image = pickedImage
+            }
+            dismiss(animated: true, completion: nil)
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true, completion: nil)
+        }
+        
     }
-    */
-
 

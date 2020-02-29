@@ -18,29 +18,22 @@ class AddViewController: UIViewController,UITextFieldDelegate{
     
     @IBOutlet weak var dateName: UITextField!
     
-    
     @IBOutlet weak var Place1: UITextField!
     @IBOutlet weak var Place2: UITextField!
-    
     @IBOutlet weak var Place3: UITextField!
-    
     @IBOutlet weak var Place4: UITextField!
-    
     @IBOutlet weak var Place5: UITextField!
-    
     
     @IBOutlet weak var Memo: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextView()
-         database = Firestore.firestore()
+        database = Firestore.firestore()
         dateName.delegate = self
-
-        // Do any additional setup after loading the view.
     }
     
-
+    //投稿機能
     @IBAction func postcontent() {
         let contentMemo = Memo.text!
         let DateName = dateName.text!
@@ -70,6 +63,8 @@ class AddViewController: UIViewController,UITextFieldDelegate{
         }
     }
     
+    
+    //メモ欄　追加機能
     func setupTextView() {
         let toolBar = UIToolbar()
         let flexibleSpaceBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -78,11 +73,12 @@ class AddViewController: UIViewController,UITextFieldDelegate{
         toolBar.sizeToFit()
         Memo.inputAccessoryView = toolBar
     }
-
+    
     @objc func dismissKeyboard() {
     Memo.resignFirstResponder()
         }
     
+    //テキストフィールド追加機能
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         dateName.resignFirstResponder()
         return true
