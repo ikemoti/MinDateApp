@@ -19,10 +19,26 @@ class detailCellViewController: UIViewController {
     
     var database:Firestore!
     var postArray: [Post] = []
+    
+    var cellPostID = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         print(me)
+        print(cellPostID)
+        database = Firestore.firestore()
       
 }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        database.collection("posts").document(cellPostID).getDocument { (snapshot, error) in
+        if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+            let post = Post(data: data)
+            self.cellDateName.text = post.DateName
+               
+    }
+    
+}
+}
 }

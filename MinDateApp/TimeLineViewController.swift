@@ -83,8 +83,11 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "detailCell", sender: me )
         print(postArray[indexPath.row].postID)
-       
-       
+        let storyborad:UIStoryboard = self.storyboard!
+        let detailCellVc = storyboard?.instantiateViewController(identifier: "detailVC")as! detailCellViewController
+        detailCellVc.cellPostID = postArray[indexPath.row].postID
+
+        
     }
     
     @IBAction func addVC() {

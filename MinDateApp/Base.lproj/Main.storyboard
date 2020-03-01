@@ -188,7 +188,7 @@
         <!--Detail Cell View Controller-->
         <scene sceneID="wPU-UO-izV">
             <objects>
-                <viewController id="2VS-MP-lHv" customClass="detailCellViewController" customModule="MinDateApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVC" id="2VS-MP-lHv" customClass="detailCellViewController" customModule="MinDateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S6F-wP-9kf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
