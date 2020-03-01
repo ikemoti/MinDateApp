@@ -160,6 +160,7 @@
                     <connections>
                         <outlet property="tableview" destination="da1-pI-2Ak" id="6zq-2t-WGk"/>
                         <segue destination="grl-dl-RYt" kind="presentation" identifier="ADD" id="U6h-Nz-DsL"/>
+                        <segue destination="2VS-MP-lHv" kind="presentation" identifier="detailCell" id="PfJ-ER-hVV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aq-nV-kmx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -184,6 +185,33 @@
             </objects>
             <point key="canvasLocation" x="-684" y="816"/>
         </scene>
+        <!--Detail Cell View Controller-->
+        <scene sceneID="wPU-UO-izV">
+            <objects>
+                <viewController id="2VS-MP-lHv" customClass="detailCellViewController" customModule="MinDateApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S6F-wP-9kf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xt-Tp-4Oa">
+                                <rect key="frame" x="229" y="166" width="42" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vVV-jK-ut8"/>
+                    </view>
+                    <connections>
+                        <outlet property="cellDateName" destination="0xt-Tp-4Oa" id="QX4-g3-O19"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="60j-9b-WgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1195.6521739130435" y="-244.41964285714283"/>
+        </scene>
         <!--Add View Controller-->
         <scene sceneID="I67-YT-aEl">
             <objects>
@@ -192,15 +220,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2g-ry-XDZ">
-                                <rect key="frame" x="91" y="697" width="201" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                                <state key="normal" title="投稿する"/>
-                                <connections>
-                                    <action selector="postcontent" destination="grl-dl-RYt" eventType="touchUpInside" id="PMc-zx-U9o"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="目的地5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CLA-uX-K9Q">
                                 <rect key="frame" x="76" y="434" width="240" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -245,6 +264,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2g-ry-XDZ">
+                                <rect key="frame" x="115" y="656" width="201" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <state key="normal" title="投稿する"/>
+                                <connections>
+                                    <action selector="postcontent" destination="grl-dl-RYt" eventType="touchUpInside" id="PMc-zx-U9o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="JmN-sf-zy9"/>
@@ -261,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkw-L8-Bv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153.6231884057972" y="158.70535714285714"/>
+            <point key="canvasLocation" x="1196" y="502"/>
         </scene>
     </scenes>
 </document>

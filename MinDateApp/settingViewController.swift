@@ -16,13 +16,11 @@ class settingViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     
     var me :AppUser!
+    var database:Firestore!
     
-    @IBOutlet weak var imageView: UIImageView!{
-        didSet {
-            // デフォルトの画像を表示する
-            imageView.image = UIImage(named: "no_image.png")
-        }
-    }
+    @IBOutlet weak var imageView: UIImageView!
+       
+    
     let imagePicker = UIImagePickerController()
     
    
@@ -30,7 +28,7 @@ class settingViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         usernameTextField.delegate = self
         usernameTextField.text = me.userName
-        imageView.image = me.userImage as! UIImage
+        
     }
    
     
@@ -39,7 +37,7 @@ class settingViewController: UIViewController,UITextFieldDelegate {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
-        saveToFireStore()
+        
         print(imageView.image )
        }
        
@@ -79,21 +77,22 @@ class settingViewController: UIViewController,UITextFieldDelegate {
                    "userName": newUserName
                ], merge: true)
                }
-   fileprivate func saveToFireStore(){
-       var data: [String : Any] = [:]
-       upload(){ url in
-           guard let url = url else {return }
-           data["image"] = url
-           Firestore.firestore().collection("images").document().setData(data){ error in
-               if error != nil {
-                   print("error: \(error?.localizedDescription)")
-               }
-               print("image saved!")
-           }
-       }
-   }
-
-   
+//   fileprivate func saveToFireStore(){
+//       var data: [String : Any] = [:]
+//       upload(){ url in
+//           guard let url = url else {return }
+//           data["userImage"] = url
+//        Firestore.firestore().collection("users").document(self.me?.userImage as! String).setData(
+//        ["userImage":data]){ error in
+//               if error != nil {
+//                   print("error: \(error?.localizedDescription)")
+//               }
+//               print("image saved!")
+//           }
+//       }
+//   }
+//
+//
 
 
 

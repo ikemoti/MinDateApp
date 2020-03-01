@@ -77,6 +77,16 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return cell
     }
     
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "detailCell", sender: me )
+        print(postArray[indexPath.row].postID)
+       
+       
+    }
+    
     @IBAction func addVC() {
         performSegue(withIdentifier: "ADD", sender: me)
     }
@@ -87,9 +97,15 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ADD"{
         let destination = segue.destination as!AddViewController
         destination.me = sender as!AppUser
-        
+        }else if segue.identifier == "detailCell"{
+            let destination2 = segue.destination as! detailCellViewController
+            destination2.me = sender as!AppUser
+            
+        }
     }
     
+
 }
