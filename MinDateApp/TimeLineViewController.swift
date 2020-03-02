@@ -40,6 +40,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     let data = document.data()
                     let post = Post(data: data)
                     self.postArray.append(post)
+                    print(post)
                 }
                 self.tableview.reloadData()
             }

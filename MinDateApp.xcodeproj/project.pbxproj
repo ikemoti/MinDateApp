@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE9349A724064A03005C3A49 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349A624064A03005C3A49 /* AddViewController.swift */; };
-		CE9349AD2407B89C005C3A49 /* tabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AC2407B89C005C3A49 /* tabViewController.swift */; };
+		CE9349AD2407B89C005C3A49 /* self.tabBar.barTintColor = [UIColor lightGrayColor];.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AC2407B89C005C3A49 /* self.tabBar.barTintColor = [UIColor lightGrayColor];.swift */; };
 		CE9349AF2408BBD6005C3A49 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AE2408BBD6005C3A49 /* settingViewController.swift */; };
 		CE9349B3240BA6B4005C3A49 /* detailCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */; };
 		CEC465002404B4D4005D8BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC464FF2404B4D4005D8BE7 /* AppDelegate.swift */; };
@@ -29,7 +29,7 @@
 		B802494D746D647C28DAA219 /* Pods_MinDateApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinDateApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADD64419FC1D5CF7EC2F87F /* Pods-MinDateApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinDateApp.release.xcconfig"; path = "Target Support Files/Pods-MinDateApp/Pods-MinDateApp.release.xcconfig"; sourceTree = "<group>"; };
 		CE9349A624064A03005C3A49 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		CE9349AC2407B89C005C3A49 /* tabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabViewController.swift; sourceTree = "<group>"; };
+		CE9349AC2407B89C005C3A49 /* self.tabBar.barTintColor = [UIColor lightGrayColor];.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "self.tabBar.barTintColor = [UIColor lightGrayColor];.swift"; sourceTree = "<group>"; };
 		CE9349AE2408BBD6005C3A49 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCellViewController.swift; sourceTree = "<group>"; };
 		CEC464FC2404B4D4005D8BE7 /* MinDateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinDateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +104,7 @@
 				CEC465052404B4D4005D8BE7 /* Main.storyboard */,
 				CE9349AE2408BBD6005C3A49 /* settingViewController.swift */,
 				CEC4651A2404B902005D8BE7 /* AppUser.swift */,
-				CE9349AC2407B89C005C3A49 /* tabViewController.swift */,
+				CE9349AC2407B89C005C3A49 /* self.tabBar.barTintColor = [UIColor lightGrayColor];.swift */,
 				CEC465182404B8DA005D8BE7 /* AccountViewController.swift */,
 				CEC4651C2404BAE3005D8BE7 /* Post.swift */,
 				CEC4651E2404BB1D005D8BE7 /* TimeLineViewController.swift */,
@@ -235,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC465002404B4D4005D8BE7 /* AppDelegate.swift in Sources */,
-				CE9349AD2407B89C005C3A49 /* tabViewController.swift in Sources */,
+				CE9349AD2407B89C005C3A49 /* self.tabBar.barTintColor = [UIColor lightGrayColor];.swift in Sources */,
 				CEC4651B2404B902005D8BE7 /* AppUser.swift in Sources */,
 				CE9349A724064A03005C3A49 /* AddViewController.swift in Sources */,
 				CEC4651F2404BB1D005D8BE7 /* TimeLineViewController.swift in Sources */,

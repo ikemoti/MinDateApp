@@ -20,7 +20,7 @@ class detailCellViewController: UIViewController {
     var database:Firestore!
     var postArray: [Post] = []
     
-    var cellPostID = ""
+    var cellPostID:String!
     override func viewDidLoad() {
         super.viewDidLoad()
         print(me)
@@ -32,13 +32,25 @@ class detailCellViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        database.collection("posts").document(cellPostID).getDocument { (snapshot, error) in
-        if error == nil, let snapshot = snapshot, let data = snapshot.data() {
-            let post = Post(data: data)
+    
+        print(cellPostID)
+        print("ok")
+        database.collection("posts").document("4KWpSVkAyXhq6ewazqYt").getDocument { (snapshot, error) in
+            if error != nil{}
+                guard let snapshot = snapshot, let data = snapshot.data()else{return}
+                let post = Post(data:data)
+                print(post.DateName)
             self.cellDateName.text = post.DateName
-               
-    }
+            print ("成功")
+            print(post.DateName)
+          }
     
 }
 }
-}
+
+
+//database.collection("users").document(postArray[indexPath.row].senderID).getDocument { (snapshot, error) in
+//if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+//    let appUser = AppUser(data: data)
+//    print(appUser.userName)
+//    cell.detailTextLabel?.text = appUser.userName
