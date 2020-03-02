@@ -37,13 +37,12 @@ class settingViewController: UIViewController,UITextFieldDelegate {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
-        
         print(imageView.image )
        }
        
     
    
-     fileprivate   func upload(completed: @escaping(_ url: String?) -> Void) {
+      func upload(completed: @escaping(_ url: String?) -> Void) {
           let date = NSDate()
           let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
           let storageRef = Storage.storage().reference().child("images").child("\(currentTimeStampInSecond).jpg")
@@ -76,23 +75,29 @@ class settingViewController: UIViewController,UITextFieldDelegate {
                Firestore.firestore().collection("users").document(me.userID).setData([
                    "userName": newUserName
                ], merge: true)
+        saveToFireStore()
+        print("成功")
                }
-//   fileprivate func saveToFireStore(){
-//       var data: [String : Any] = [:]
-//       upload(){ url in
-//           guard let url = url else {return }
-//           data["userImage"] = url
-//        Firestore.firestore().collection("users").document(self.me?.userImage as! String).setData(
-//        ["userImage":data]){ error in
-//               if error != nil {
-//                   print("error: \(error?.localizedDescription)")
-//               }
-//               print("image saved!")
-//           }
-//       }
-//   }
-//
-//
+    
+    
+    
+    func saveToFireStore(){
+        print ("start")
+       var data: [String : Any] = [:]
+       upload(){ url in
+           guard let url = url else {return }
+           data["userImage"] = url
+        Firestore.firestore().collection("users").document(self.me.userID).setData(
+        ["userImage":data],merge: true){ error in
+               if error != nil {
+                   print("error: \(error?.localizedDescription)")
+               }
+               print("image saved!")
+           }
+       }
+   }
+
+
 
 
 
