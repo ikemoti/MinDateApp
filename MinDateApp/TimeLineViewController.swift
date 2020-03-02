@@ -17,9 +17,13 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var postArray: [Post] = []
     
     
+    
     @IBOutlet weak var tableview: UITableView!
     
     
+    
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         database = Firestore.firestore()
@@ -27,7 +31,8 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tableview.dataSource = self
         print (me)
         
-
+        tableview.rowHeight = 100
+        
         // Do any additional setup after loading the view.
     }
     
@@ -63,8 +68,8 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-         cell.textLabel?.text = postArray[indexPath.row].DateName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TVCell")!as!TVCell
+        cell.cellDateName.text = postArray[indexPath.row].DateName
         
         
         // 追加。それぞれの記事を投稿したユーザーをPostクラスのsenderIDを元に取得している。
@@ -72,7 +77,9 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
             if error == nil, let snapshot = snapshot, let data = snapshot.data() {
                 let appUser = AppUser(data: data)
                 print(appUser.userName)
-                cell.detailTextLabel?.text = appUser.userName // 今回は、ユーザー名をdetailTextLabelに表示。
+                cell.cellUserName.text = appUser.userName
+                print("ユーザー名表示成功")
+                // 今回は、ユーザー名をdetailTextLabelに表示。
             }
         }
         return cell

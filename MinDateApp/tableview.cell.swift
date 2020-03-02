@@ -12,13 +12,11 @@ class TVCell:UITableViewCell{
     
     
     
-    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var cellImageView: UIImageView!
     
     
     @IBOutlet weak var cellDateName: UILabel!
     
     
-    
-    @IBOutlet weak var celluserName: UILabel!
-    
+    @IBOutlet weak var cellUserName: UILabel!
 }

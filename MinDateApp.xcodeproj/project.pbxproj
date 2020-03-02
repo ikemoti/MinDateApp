@@ -11,7 +11,6 @@
 		CE9349AD2407B89C005C3A49 /* self.tabBar.barTintColor = [UIColor lightGrayColor];.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AC2407B89C005C3A49 /* self.tabBar.barTintColor = [UIColor lightGrayColor];.swift */; };
 		CE9349AF2408BBD6005C3A49 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AE2408BBD6005C3A49 /* settingViewController.swift */; };
 		CE9349B3240BA6B4005C3A49 /* detailCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */; };
-		CE9349B5240D0DB0005C3A49 /* tableview.cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9349B4240D0DB0005C3A49 /* tableview.cell.xib */; };
 		CE9349B7240D0ED5005C3A49 /* tableview.cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349B6240D0ED5005C3A49 /* tableview.cell.swift */; };
 		CEC465002404B4D4005D8BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC464FF2404B4D4005D8BE7 /* AppDelegate.swift */; };
 		CEC465022404B4D4005D8BE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC465012404B4D4005D8BE7 /* SceneDelegate.swift */; };
@@ -34,7 +33,6 @@
 		CE9349AC2407B89C005C3A49 /* self.tabBar.barTintColor = [UIColor lightGrayColor];.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "self.tabBar.barTintColor = [UIColor lightGrayColor];.swift"; sourceTree = "<group>"; };
 		CE9349AE2408BBD6005C3A49 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCellViewController.swift; sourceTree = "<group>"; };
-		CE9349B4240D0DB0005C3A49 /* tableview.cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tableview.cell.xib; sourceTree = "<group>"; };
 		CE9349B6240D0ED5005C3A49 /* tableview.cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableview.cell.swift; sourceTree = "<group>"; };
 		CEC464FC2404B4D4005D8BE7 /* MinDateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinDateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC464FF2404B4D4005D8BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				CEC465182404B8DA005D8BE7 /* AccountViewController.swift */,
 				CEC4651C2404BAE3005D8BE7 /* Post.swift */,
 				CEC4651E2404BB1D005D8BE7 /* TimeLineViewController.swift */,
-				CE9349B4240D0DB0005C3A49 /* tableview.cell.xib */,
 				CE9349B6240D0ED5005C3A49 /* tableview.cell.swift */,
 				CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */,
 				CE9349A624064A03005C3A49 /* AddViewController.swift */,
@@ -185,7 +182,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC4650F2404B4D7005D8BE7 /* LaunchScreen.storyboard in Resources */,
-				CE9349B5240D0DB0005C3A49 /* tableview.cell.xib in Resources */,
 				CEC465262404C765005D8BE7 /* GoogleService-Info.plist in Resources */,
 				CEC4650C2404B4D7005D8BE7 /* Assets.xcassets in Resources */,
 				CEC465072404B4D4005D8BE7 /* Main.storyboard in Resources */,
