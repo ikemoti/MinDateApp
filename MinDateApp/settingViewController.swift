@@ -81,6 +81,12 @@ class settingViewController: UIViewController,UITextFieldDelegate {
                }
     
     
+    @IBAction func logout() {
+        try? Auth.auth().signOut()
+           let accountViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! AccountViewController
+        accountViewController.modalPresentationStyle = .fullScreen
+           present(accountViewController, animated: true, completion: nil)
+    }
     
     func saveToFireStore(){
         
