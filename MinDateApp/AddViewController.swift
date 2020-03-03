@@ -54,8 +54,7 @@ class AddViewController: UIViewController,UITextFieldDelegate{
             "contentMemo": contentMemo,
             "postID": saveDocument.documentID,
             "senderID": me.userID,
-            "createdAt": FieldValue.serverTimestamp(),
-            "updatedAt": FieldValue.serverTimestamp()
+           
         ]) { error in
             if error == nil {
                 self.dismiss(animated: true, completion: nil)

@@ -10,13 +10,12 @@ import UIKit
 
 class TVCell:UITableViewCell{
     
-    
-    
     @IBOutlet weak var cellImageView: UIImageView!
-    
     
     @IBOutlet weak var cellDateName: UILabel!
     
-    
     @IBOutlet weak var cellUserName: UILabel!
-}
+    
+    }
+
+

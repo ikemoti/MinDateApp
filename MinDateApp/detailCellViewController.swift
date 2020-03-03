@@ -15,42 +15,62 @@ class detailCellViewController: UIViewController {
     
     @IBOutlet weak var cellDateName: UILabel!
     
+    
+    @IBOutlet weak var cellDatePlace1: UILabel!
+    
+    
+    @IBOutlet weak var cellDatePlace2: UILabel!
+    
+    @IBOutlet weak var cellDatePlace3: UILabel!
+    
+    
+    @IBOutlet weak var cellDatePlace4: UILabel!
+    
+    
+    
     var me :AppUser!
     
     var database:Firestore!
+   
     var postArray: [Post] = []
     
-    var cellPostID:String!
+    var pos :String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(me)
-        print(cellPostID)
         database = Firestore.firestore()
-      
-}
+        
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    
-        print(cellPostID)
-        print("ok")
-        database.collection("posts").document("4KWpSVkAyXhq6ewazqYt").getDocument { (snapshot, error) in
-            if error != nil{}
-                guard let snapshot = snapshot, let data = snapshot.data()else{return}
-                let post = Post(data:data)
-                print(post.DateName)
+       
+        print ("読み込み成功")
+        print (pos)
+//
+        database.collection("posts").document(pos).getDocument { (snapshot, error) in
+        if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+            let post = Post(data: data)
             self.cellDateName.text = post.DateName
-            print ("成功")
-            print(post.DateName)
-          }
+            self.cellDatePlace1.text = post.place1
+            self.cellDatePlace2.text = post.place2
+            self.cellDatePlace3.text = post.place3
+            
+
+        
+            }}}}
     
-}
-}
+   
+//
+//        database.collection("posts").document(pos).getDocument { (snapshot, error) in
+//            if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+//                self.pos = Post(data: data)
+//            }
+//        }
+//
+//    }
 
 
-//database.collection("users").document(postArray[indexPath.row].senderID).getDocument { (snapshot, error) in
-//if error == nil, let snapshot = snapshot, let data = snapshot.data() {
-//    let appUser = AppUser(data: data)
-//    print(appUser.userName)
-//    cell.detailTextLabel?.text = appUser.userName
+    
+  
+
+
+
+

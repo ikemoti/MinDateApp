@@ -11,6 +11,7 @@ import Firebase
 import FirebaseStorage
 import FirebaseFirestore
 
+
 class settingViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
@@ -47,7 +48,7 @@ class settingViewController: UIViewController,UITextFieldDelegate {
           let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
           let storageRef = Storage.storage().reference().child("images").child("\(currentTimeStampInSecond).jpg")
           let metaData = StorageMetadata()
-          metaData.contentType = "image/jpg"
+          metaData.contentType = "image/jpg"//アップロードするときのコンテンツ指定
           if let uploadData = self.imageView.image?.jpegData(compressionQuality: 0.9) {
               storageRef.putData(uploadData, metadata: metaData) { (metadata , error) in
                   if error != nil {
@@ -82,35 +83,15 @@ class settingViewController: UIViewController,UITextFieldDelegate {
     
     
     func saveToFireStore(){
-        print ("start")
+        
        var data: [String : Any] = [:]
        upload(){ url in
            guard let url = url else {return }
            data["userImage"] = url
         Firestore.firestore().collection("users").document(self.me.userID).setData(
-        ["userImage":data],merge: true){ error in
-               if error != nil {
-                   print("error: \(error?.localizedDescription)")
-               }
-               print("image saved!")
-           }
+        ["userImage":url],merge: true) }
        }
    }
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
 
 //写真を選んだ後に呼ばれる処理
 extension settingViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{

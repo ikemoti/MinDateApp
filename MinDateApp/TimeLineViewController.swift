@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -16,6 +17,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var database: Firestore!
     var postArray: [Post] = []
     
+    var imageURL:String!
     
     
     @IBOutlet weak var tableview: UITableView!
@@ -33,6 +35,8 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         tableview.rowHeight = 100
         
+        
+       
         // Do any additional setup after loading the view.
     }
     
@@ -45,7 +49,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     let data = document.data()
                     let post = Post(data: data)
                     self.postArray.append(post)
-                    print(post)
+                 
                 }
                 self.tableview.reloadData()
             }
@@ -76,25 +80,45 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         database.collection("users").document(postArray[indexPath.row].senderID).getDocument { (snapshot, error) in
             if error == nil, let snapshot = snapshot, let data = snapshot.data() {
                 let appUser = AppUser(data: data)
-                print(appUser.userName)
+               
                 cell.cellUserName.text = appUser.userName
-                print("ユーザー名表示成功")
-                // 今回は、ユーザー名をdetailTextLabelに表示。
+                
+                self.imageURL = appUser.userImage
+                
+               
+               
+                let imageURLTest = URL(string: "1583204101373.jpg")
+                cell.cellImageView.sd_setImage(with: imageURLTest)
             }
         }
+//        database.collection("users").document(postArray[indexPath.row].senderID).getDocument { (snapshot, error) in
+//                  if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+//                      let appUser = AppUser(data: data)
+//                      print(appUser.userImage)
+//                    self.imageURL = appUser.userImage
+//                    print(self.imageURL)
+//
+//            }
+//        }
+        //この後にsdwebimage　使って　cell.webimageに　打ち込む
+//
+        
         return cell
+      
+       
     }
     
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "detailCell", sender: me )
+        performSegue(withIdentifier: "detailCell", sender: postArray[indexPath.row].postID)
         print(postArray[indexPath.row].postID)
-        let storyborad:UIStoryboard = self.storyboard!
-        let detailCellVc = storyboard?.instantiateViewController(identifier: "detailVC")as! detailCellViewController
-        detailCellVc.cellPostID = postArray[indexPath.row].postID
-
+//
+//        let storyborad:UIStoryboard = self.storyboard!
+//        let detailCellVc = storyboard?.instantiateViewController(identifier: "detailVC")as! detailCellViewController
+//        detailCellVc.pos  = Post(data: ["postID" :postArray[indexPath.row].postID])
+//        print(detailCellVc.pos)
         
     }
     
@@ -104,7 +128,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     
-  
+
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,10 +137,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         destination.me = sender as!AppUser
         }else if segue.identifier == "detailCell"{
             let destination2 = segue.destination as! detailCellViewController
-            destination2.me = sender as!AppUser
-            
-        }
+            destination2.pos = sender as! String
+            }
     }
-    
-
-}
+    }
