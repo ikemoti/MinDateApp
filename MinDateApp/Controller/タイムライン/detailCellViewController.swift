@@ -14,26 +14,17 @@ class detailCellViewController: UIViewController {
     
     
     @IBOutlet weak var cellDateName: UILabel!
-    
-    
     @IBOutlet weak var cellDatePlace1: UILabel!
-    
-    
     @IBOutlet weak var cellDatePlace2: UILabel!
-    
     @IBOutlet weak var cellDatePlace3: UILabel!
-    
-    
     @IBOutlet weak var cellDatePlace4: UILabel!
+    @IBOutlet weak var cellDatePlace5: UILabel!
     
     
     
     var me :AppUser!
-    
     var database:Firestore!
-   
-    var postArray: [Post] = []
-    
+   var postArray: [Post] = []
     var pos :String!
     
     override func viewDidLoad() {
@@ -42,9 +33,7 @@ class detailCellViewController: UIViewController {
         
     
        
-        print ("読み込み成功")
-        print (pos)
-//
+      
         database.collection("posts").document(pos).getDocument { (snapshot, error) in
         if error == nil, let snapshot = snapshot, let data = snapshot.data() {
             let post = Post(data: data)
@@ -52,20 +41,26 @@ class detailCellViewController: UIViewController {
             self.cellDatePlace1.text = post.place1
             self.cellDatePlace2.text = post.place2
             self.cellDatePlace3.text = post.place3
-            
-
+        }
+            }
         
-            }}}}
+        
+        self.cellDateName.layer.borderWidth = 2.0
+        self.cellDateName.layer.backgroundColor = UIColor.red.cgColor
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+}
     
    
-//
-//        database.collection("posts").document(pos).getDocument { (snapshot, error) in
-//            if error == nil, let snapshot = snapshot, let data = snapshot.data() {
-//                self.pos = Post(data: data)
-//            }
-//        }
-//
-//    }
 
 
     
