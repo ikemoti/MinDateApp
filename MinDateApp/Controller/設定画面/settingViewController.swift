@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FirebaseFirestore
+import SDWebImage
 
 
 class settingViewController: UIViewController,UITextFieldDelegate {
@@ -18,6 +19,11 @@ class settingViewController: UIViewController,UITextFieldDelegate {
     
     var me :AppUser!
     var database:Firestore!
+    
+    var test:String!
+     
+  
+    @IBOutlet weak var imageviewtest: UIImageView!
     
     @IBOutlet weak var imageView: UIImageView!
        
@@ -29,6 +35,7 @@ class settingViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         usernameTextField.delegate = self
         usernameTextField.text = me.userName
+        database = Firestore.firestore()
         
     }
    
@@ -36,14 +43,18 @@ class settingViewController: UIViewController,UITextFieldDelegate {
     @IBAction func selectImage(_ sender: Any) {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
+        imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
         present(imagePicker, animated: true, completion: nil)
         print(imageView.image )
        }
        
+      @IBAction func testButton() {
+        saveToFireStore()
+      }
+      
     
-   
-      func upload(completed: @escaping(_ url: String?) -> Void) {
+    
+    func upload(completed: @escaping(_ url: String?) -> Void) {
           let date = NSDate()
           let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
           let storageRef = Storage.storage().reference().child("images").child("\(currentTimeStampInSecond).jpg")
@@ -76,8 +87,10 @@ class settingViewController: UIViewController,UITextFieldDelegate {
                Firestore.firestore().collection("users").document(me.userID).setData([
                    "userName": newUserName
                ], merge: true)
-        saveToFireStore()
-        print("成功")
+        print(me.userImage)
+        
+      
+         
                }
     
     
@@ -93,12 +106,35 @@ class settingViewController: UIViewController,UITextFieldDelegate {
        var data: [String : Any] = [:]
        upload(){ url in
            guard let url = url else {return }
+        print(url)
            data["userImage"] = url
+    
         Firestore.firestore().collection("users").document(self.me.userID).setData(
         ["userImage":url],merge: true) }
+        
        }
-   }
+    
+//    func getimageURL(){
+//
+//        database.collection("users").document(self.me.userID).getDocument { (snapshot, error) in
+//        if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+//            print(self.test)
+//            print("ok")
+//          self.test =  self.me.userImage
+//             print(self.test)
+//            self.imageviewtest.sd_setImage(with:self.test as URL)
+//
+            
+    
+           
+            
+    
+    
+   
 
+
+        
+}
 //写真を選んだ後に呼ばれる処理
 extension settingViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     

@@ -31,15 +31,22 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
 
                Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                    if error == nil, let result = result, result.user.isEmailVerified {
-                       self.performSegue(withIdentifier: "Timeline", sender: result.user)
+                       self.performSegue(withIdentifier: "TimeLine", sender: result.user)
                    }
     }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let user = sender as! User
-                  let destination = segue.destination as! TimeLineViewController
-                  destination.me = AppUser(data: ["userID": user.uid])
+       let nextViewController = segue.destination as!tabViewController
+       let les = nextViewController.viewControllers![0] as!TimeLineViewController
+       let gosettingviewcontroller = segue.destination as! tabViewController
+       let res = gosettingviewcontroller.viewControllers![1] as!settingViewController
+      
+       les.me = AppUser(data: ["userID": user.uid])
+       res.me = AppUser(data: ["userID": user.uid])
+        
+        
       
     }
 
