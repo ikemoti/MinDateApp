@@ -68,7 +68,7 @@ class AccountViewController: UIViewController {
     }
     
 
-
+//キーボード閉じる
 extension AccountViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

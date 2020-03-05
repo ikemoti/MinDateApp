@@ -122,10 +122,11 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
-    @IBAction func addVC() {
+   
+    
+    @IBAction func AddVC() {
         performSegue(withIdentifier: "ADD", sender: me)
     }
-    
     
     
 

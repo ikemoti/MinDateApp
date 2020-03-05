@@ -20,15 +20,7 @@ class settingViewController: UIViewController,UITextFieldDelegate {
     var me :AppUser!
     var database:Firestore!
     
-    var test:String!
-     
-  
-    @IBOutlet weak var imageviewtest: UIImageView!
-    
-    @IBOutlet weak var imageView: UIImageView!
-       
-    
-    let imagePicker = UIImagePickerController()
+//    let imagePicker = UIImagePickerController()
     
    
     override func viewDidLoad() {
@@ -39,44 +31,41 @@ class settingViewController: UIViewController,UITextFieldDelegate {
         
     }
    
-    
-    @IBAction func selectImage(_ sender: Any) {
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        present(imagePicker, animated: true, completion: nil)
-        print(imageView.image )
-       }
+//
+//    @IBAction func selectImage(_ sender: Any) {
+//        imagePicker.allowsEditing = true
+//        imagePicker.sourceType = .photoLibrary
+//        imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+//        present(imagePicker, animated: true, completion: nil)
+//        print(imageView.image )
+//       }
        
-      @IBAction func testButton() {
-        saveToFireStore()
-      }
-      
+     
     
     
-    func upload(completed: @escaping(_ url: String?) -> Void) {
-          let date = NSDate()
-          let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
-          let storageRef = Storage.storage().reference().child("images").child("\(currentTimeStampInSecond).jpg")
-          let metaData = StorageMetadata()
-          metaData.contentType = "image/jpg"//アップロードするときのコンテンツ指定
-          if let uploadData = self.imageView.image?.jpegData(compressionQuality: 0.9) {
-              storageRef.putData(uploadData, metadata: metaData) { (metadata , error) in
-                  if error != nil {
-                    completed(nil)
-                      print("error: \(error?.localizedDescription)")
-                  }
-                  storageRef.downloadURL(completion: { (url, error) in
-                      if error != nil {
-                        completed(nil)
-                          print("error: \(error?.localizedDescription)")
-                      }
-                      completed("url: \(url?.absoluteString)")
-                  })
-              }
-          }
-      }
-    
+//    func upload(completed: @escaping(_ url: String?) -> Void) {
+//          let date = NSDate()
+//          let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
+//          let storageRef = Storage.storage().reference().child("images").child("\(currentTimeStampInSecond).jpg")
+//          let metaData = StorageMetadata()
+//          metaData.contentType = "image/jpg"//アップロードするときのコンテンツ指定
+//          if let uploadData = self.imageView.image?.jpegData(compressionQuality: 0.9) {
+//              storageRef.putData(uploadData, metadata: metaData) { (metadata , error) in
+//                  if error != nil {
+//                    completed(nil)
+//                      print("error: \(error?.localizedDescription)")
+//                  }
+//                  storageRef.downloadURL(completion: { (url, error) in
+//                      if error != nil {
+//                        completed(nil)
+//                          print("error: \(error?.localizedDescription)")
+//                      }
+//                      completed("url: \(url?.absoluteString)")
+//                  })
+//              }
+//          }
+//      }
+//
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         usernameTextField.resignFirstResponder()
         return true
@@ -88,10 +77,7 @@ class settingViewController: UIViewController,UITextFieldDelegate {
                    "userName": newUserName
                ], merge: true)
         print(me.userImage)
-        
-      
-         
-               }
+        }
     
     
     @IBAction func logout() {
@@ -101,55 +87,35 @@ class settingViewController: UIViewController,UITextFieldDelegate {
            present(accountViewController, animated: true, completion: nil)
     }
     
-    func saveToFireStore(){
-        
-       var data: [String : Any] = [:]
-       upload(){ url in
-           guard let url = url else {return }
-        print(url)
-           data["userImage"] = url
-    
-        Firestore.firestore().collection("users").document(self.me.userID).setData(
-        ["userImage":url],merge: true) }
-        
-       }
-    
-//    func getimageURL(){
+//    func saveToFireStore(){
 //
-//        database.collection("users").document(self.me.userID).getDocument { (snapshot, error) in
-//        if error == nil, let snapshot = snapshot, let data = snapshot.data() {
-//            print(self.test)
-//            print("ok")
-//          self.test =  self.me.userImage
-//             print(self.test)
-//            self.imageviewtest.sd_setImage(with:self.test as URL)
+//       var data: [String : Any] = [:]
+//       upload(){ url in
+//           guard let url = url else {return }
+//        print(url)
+//           data["userImage"] = url
 //
-            
+//        Firestore.firestore().collection("users").document(self.me.userID).setData(
+//        ["userImage":url],merge: true) }
+//
+//       }
     
-           
-            
-    
-    
-   
-
-
-        
 }
 //写真を選んだ後に呼ばれる処理
-extension settingViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-    
-
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
-            if let pickedImage =  info[.originalImage] as? UIImage {
-                imageView.contentMode = .scaleAspectFit
-                imageView.image = pickedImage
-            }
-            dismiss(animated: true, completion: nil)
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            dismiss(animated: true, completion: nil)
-        }
-        
-    }
+//extension settingViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+//
+//
+//        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
+//            if let pickedImage =  info[.originalImage] as? UIImage {
+//                imageView.contentMode = .scaleAspectFit
+//                imageView.image = pickedImage
+//            }
+//            dismiss(animated: true, completion: nil)
+//        }
+//
+//        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//            dismiss(animated: true, completion: nil)
+//        }
+//
+//    }
 

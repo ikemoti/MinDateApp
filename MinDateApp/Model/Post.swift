@@ -16,7 +16,7 @@ struct Post {
     let place3:String
     let place4:String
     let place5:String
-    let contentMemo: String
+//    let contentMemo: String
     let postID: String
     let senderID: String
     
@@ -28,7 +28,7 @@ struct Post {
         place3 = data["place3"] as? String ?? "s"
         place4 = data["place4"] as? String ?? "s"
         place5 = data["place5"] as? String ?? "s"
-        contentMemo = data["contentMemo"] as? String ?? "s"
+//        contentMemo = data["contentMemo"] as? String ?? "s"
         postID = data["postID"] as? String ?? "s"
         senderID = data["senderID"] as? String ?? "s"
         
