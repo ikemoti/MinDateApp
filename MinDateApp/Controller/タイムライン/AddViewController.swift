@@ -15,10 +15,12 @@ class AddViewController: UIViewController,UITextFieldDelegate{
     var me :AppUser!
     var database:Firestore!
     
+   
+    @IBOutlet weak var Place1: UILabel!
     
     @IBOutlet weak var dateName: UITextField!
     
-    @IBOutlet weak var Place1: UITextField!
+   
     @IBOutlet weak var Place2: UITextField!
     @IBOutlet weak var Place3: UITextField!
     @IBOutlet weak var Place4: UITextField!
@@ -31,7 +33,7 @@ class AddViewController: UIViewController,UITextFieldDelegate{
 //        setupTextView()
         database = Firestore.firestore()
         dateName.delegate = self
-        Place1.delegate = self
+      
         Place2.delegate = self
         Place3.delegate = self
         Place4.delegate = self
@@ -66,6 +68,9 @@ class AddViewController: UIViewController,UITextFieldDelegate{
             }
         }
     }
+    
+    
+    
     
     
     //メモ欄　追加機能

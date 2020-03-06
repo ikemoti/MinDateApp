@@ -123,13 +123,13 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
    
+   
     
-    @IBAction func AddVC() {
+ 
+    @IBAction func addVC(_ sender: Any) {
         performSegue(withIdentifier: "ADD", sender: me)
     }
     
-    
-
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
