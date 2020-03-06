@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5A861424123DE900B09FB8 /* suggest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */; };
+		CE5A8616241241F000B09FB8 /* sugest3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A8615241241F000B09FB8 /* sugest3ViewController.swift */; };
+		CE5A86182412434800B09FB8 /* sugest4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86172412434800B09FB8 /* sugest4ViewController.swift */; };
+		CE5A861A2412441100B09FB8 /* sugest5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86192412441100B09FB8 /* sugest5ViewController.swift */; };
 		CE9349A724064A03005C3A49 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349A624064A03005C3A49 /* AddViewController.swift */; };
 		CE9349AD2407B89C005C3A49 /* tabviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AC2407B89C005C3A49 /* tabviewController.swift */; };
 		CE9349AF2408BBD6005C3A49 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AE2408BBD6005C3A49 /* settingViewController.swift */; };
 		CE9349B3240BA6B4005C3A49 /* detailCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */; };
 		CE9349B7240D0ED5005C3A49 /* tableview.cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349B6240D0ED5005C3A49 /* tableview.cell.swift */; };
-		CE9349B9240E73F4005C3A49 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349B8240E73F4005C3A49 /* SignInViewController.swift */; };
+		CE9349C9241102F9005C3A49 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349B8240E73F4005C3A49 /* SignInViewController.swift */; };
+		CE9349CA24110301005C3A49 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC465182404B8DA005D8BE7 /* AccountViewController.swift */; };
+		CE9349D02411080C005C3A49 /* sugesttViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349CF2411080C005C3A49 /* sugesttViewController.swift */; };
+		CE9349D224111353005C3A49 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9349D124111352005C3A49 /* MapKit.framework */; };
 		CEC465002404B4D4005D8BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC464FF2404B4D4005D8BE7 /* AppDelegate.swift */; };
 		CEC465022404B4D4005D8BE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC465012404B4D4005D8BE7 /* SceneDelegate.swift */; };
 		CEC465072404B4D4005D8BE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC465052404B4D4005D8BE7 /* Main.storyboard */; };
 		CEC4650A2404B4D4005D8BE7 /* MinDateApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEC465082404B4D4005D8BE7 /* MinDateApp.xcdatamodeld */; };
 		CEC4650C2404B4D7005D8BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC4650B2404B4D7005D8BE7 /* Assets.xcassets */; };
 		CEC4650F2404B4D7005D8BE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC4650D2404B4D7005D8BE7 /* LaunchScreen.storyboard */; };
-		CEC465192404B8DA005D8BE7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC465182404B8DA005D8BE7 /* AccountViewController.swift */; };
 		CEC4651B2404B902005D8BE7 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4651A2404B902005D8BE7 /* AppUser.swift */; };
 		CEC4651D2404BAE3005D8BE7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4651C2404BAE3005D8BE7 /* Post.swift */; };
 		CEC4651F2404BB1D005D8BE7 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4651E2404BB1D005D8BE7 /* TimeLineViewController.swift */; };
@@ -30,12 +36,18 @@
 /* Begin PBXFileReference section */
 		B802494D746D647C28DAA219 /* Pods_MinDateApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinDateApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADD64419FC1D5CF7EC2F87F /* Pods-MinDateApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinDateApp.release.xcconfig"; path = "Target Support Files/Pods-MinDateApp/Pods-MinDateApp.release.xcconfig"; sourceTree = "<group>"; };
+		CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = suggest2ViewController.swift; path = MinDateApp/Controller/suggest2ViewController.swift; sourceTree = SOURCE_ROOT; };
+		CE5A8615241241F000B09FB8 /* sugest3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sugest3ViewController.swift; sourceTree = "<group>"; };
+		CE5A86172412434800B09FB8 /* sugest4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sugest4ViewController.swift; sourceTree = "<group>"; };
+		CE5A86192412441100B09FB8 /* sugest5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sugest5ViewController.swift; sourceTree = "<group>"; };
 		CE9349A624064A03005C3A49 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CE9349AC2407B89C005C3A49 /* tabviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabviewController.swift; sourceTree = "<group>"; };
 		CE9349AE2408BBD6005C3A49 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCellViewController.swift; sourceTree = "<group>"; };
 		CE9349B6240D0ED5005C3A49 /* tableview.cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableview.cell.swift; sourceTree = "<group>"; };
-		CE9349B8240E73F4005C3A49 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		CE9349B8240E73F4005C3A49 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = "../ログイン、サインイン/SignInViewController.swift"; sourceTree = "<group>"; };
+		CE9349CF2411080C005C3A49 /* sugesttViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sugesttViewController.swift; sourceTree = "<group>"; };
+		CE9349D124111352005C3A49 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEC464FC2404B4D4005D8BE7 /* MinDateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinDateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC464FF2404B4D4005D8BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC465012404B4D4005D8BE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +56,7 @@
 		CEC4650B2404B4D7005D8BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC4650E2404B4D7005D8BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC465102404B4D7005D8BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEC465182404B8DA005D8BE7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		CEC465182404B8DA005D8BE7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = "../ログイン、サインイン/AccountViewController.swift"; sourceTree = "<group>"; };
 		CEC4651A2404B902005D8BE7 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		CEC4651C2404BAE3005D8BE7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CEC4651E2404BB1D005D8BE7 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9349D224111353005C3A49 /* MapKit.framework in Frameworks */,
 				CEC465242404C44E005D8BE7 /* Pods_MinDateApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +80,7 @@
 		3EABFE5B5BE3DE5D0FB3E0B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE9349D124111352005C3A49 /* MapKit.framework */,
 				B802494D746D647C28DAA219 /* Pods_MinDateApp.framework */,
 			);
 			name = Frameworks;
@@ -84,10 +98,12 @@
 		CE9349BE240FC321005C3A49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CE9349C2240FC9D8005C3A49 /* ログイン、サインイン */,
 				CE9349C3240FCA1D005C3A49 /* タイムライン */,
 				CE9349C4240FCA51005C3A49 /* 設定画面 */,
 				CE9349AC2407B89C005C3A49 /* tabviewController.swift */,
+				CE9349CF2411080C005C3A49 /* sugesttViewController.swift */,
+				CE5A86192412441100B09FB8 /* sugest5ViewController.swift */,
+				CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,22 +128,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CE9349C2240FC9D8005C3A49 /* ログイン、サインイン */ = {
-			isa = PBXGroup;
-			children = (
-				CE9349B8240E73F4005C3A49 /* SignInViewController.swift */,
-				CEC465182404B8DA005D8BE7 /* AccountViewController.swift */,
-			);
-			name = "ログイン、サインイン";
-			path = "ログイン、サインイン";
-			sourceTree = "<group>";
-		};
 		CE9349C3240FCA1D005C3A49 /* タイムライン */ = {
 			isa = PBXGroup;
 			children = (
+				CEC465182404B8DA005D8BE7 /* AccountViewController.swift */,
 				CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */,
+				CE9349B8240E73F4005C3A49 /* SignInViewController.swift */,
 				CE9349A624064A03005C3A49 /* AddViewController.swift */,
+				CE5A8615241241F000B09FB8 /* sugest3ViewController.swift */,
 				CEC4651E2404BB1D005D8BE7 /* TimeLineViewController.swift */,
+				CE5A86172412434800B09FB8 /* sugest4ViewController.swift */,
 			);
 			path = "タイムライン";
 			sourceTree = "<group>";
@@ -289,19 +299,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9349D02411080C005C3A49 /* sugesttViewController.swift in Sources */,
+				CE9349CA24110301005C3A49 /* AccountViewController.swift in Sources */,
+				CE9349C9241102F9005C3A49 /* SignInViewController.swift in Sources */,
+				CE5A8616241241F000B09FB8 /* sugest3ViewController.swift in Sources */,
 				CE9349B7240D0ED5005C3A49 /* tableview.cell.swift in Sources */,
 				CEC465002404B4D4005D8BE7 /* AppDelegate.swift in Sources */,
 				CE9349AD2407B89C005C3A49 /* tabviewController.swift in Sources */,
 				CEC4651B2404B902005D8BE7 /* AppUser.swift in Sources */,
+				CE5A86182412434800B09FB8 /* sugest4ViewController.swift in Sources */,
 				CE9349A724064A03005C3A49 /* AddViewController.swift in Sources */,
-				CE9349B9240E73F4005C3A49 /* SignInViewController.swift in Sources */,
+				CE5A861424123DE900B09FB8 /* suggest2ViewController.swift in Sources */,
 				CEC4651F2404BB1D005D8BE7 /* TimeLineViewController.swift in Sources */,
 				CEC4650A2404B4D4005D8BE7 /* MinDateApp.xcdatamodeld in Sources */,
 				CEC4651D2404BAE3005D8BE7 /* Post.swift in Sources */,
 				CE9349AF2408BBD6005C3A49 /* settingViewController.swift in Sources */,
-				CEC465192404B8DA005D8BE7 /* AccountViewController.swift in Sources */,
 				CE9349B3240BA6B4005C3A49 /* detailCellViewController.swift in Sources */,
 				CEC465022404B4D4005D8BE7 /* SceneDelegate.swift in Sources */,
+				CE5A861A2412441100B09FB8 /* sugest5ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,9 +19,8 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         mailadressSI.delegate = self
         passwordSI.delegate = self
-
         auth = Auth.auth()
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func SignInButton() {

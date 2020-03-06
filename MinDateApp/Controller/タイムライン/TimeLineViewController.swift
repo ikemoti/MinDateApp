@@ -31,8 +31,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         database = Firestore.firestore()
         tableview.delegate = self
         tableview.dataSource = self
-        print (me)
-        
+      
         tableview.rowHeight = 100
         
         
@@ -122,13 +121,14 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
-    @IBAction func addVC() {
+   
+   
+    
+ 
+    @IBAction func addVC(_ sender: Any) {
         performSegue(withIdentifier: "ADD", sender: me)
     }
     
-    
-    
-
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
