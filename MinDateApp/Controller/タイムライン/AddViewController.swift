@@ -14,30 +14,28 @@ class AddViewController: UIViewController,UITextFieldDelegate{
     
     var me :AppUser!
     var database:Firestore!
-    
+    @IBOutlet weak var dateName: UITextField!
    
+    
     @IBOutlet weak var Place1: UILabel!
     
-    @IBOutlet weak var dateName: UITextField!
+    @IBOutlet weak var Place2: UILabel!
     
-   
-    @IBOutlet weak var Place2: UITextField!
-    @IBOutlet weak var Place3: UITextField!
-    @IBOutlet weak var Place4: UITextField!
-    @IBOutlet weak var Place5: UITextField!
+    @IBOutlet weak var Place3: UILabel!
     
-//    @IBOutlet weak var Memo: UITextView!
+    @IBOutlet weak var Place4: UILabel!
+    
+    
+    @IBOutlet weak var Place5: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupTextView()
+
         database = Firestore.firestore()
         dateName.delegate = self
       
-        Place2.delegate = self
-        Place3.delegate = self
-        Place4.delegate = self
-        Place5.delegate = self
+       
     }
     
     //投稿機能
@@ -70,6 +68,7 @@ class AddViewController: UIViewController,UITextFieldDelegate{
     }
     
     
+  
     
     
     
@@ -90,10 +89,7 @@ class AddViewController: UIViewController,UITextFieldDelegate{
     //テキストフィールド追加機能
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         dateName.resignFirstResponder()
-        Place1.resignFirstResponder()
-        Place2.resignFirstResponder()
-        Place3.resignFirstResponder()
-        Place4.resignFirstResponder()
+       
         return true
     }
   

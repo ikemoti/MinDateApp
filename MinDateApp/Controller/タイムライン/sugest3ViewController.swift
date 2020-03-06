@@ -1,28 +1,28 @@
 //
-//  sugesttViewController.swift
+//  sugest3ViewController.swift
 //  MinDateApp
 //
-//  Created by USER on 2020/03/05.
+//  Created by USER on 2020/03/06.
 //  Copyright © 2020 USER. All rights reserved.
 //
 
 import UIKit
 import MapKit
-
-class sugesttViewController: UIViewController,UISearchBarDelegate ,UITableViewDataSource,UITableViewDelegate,MKLocalSearchCompleterDelegate{
+class sugest3ViewController: UIViewController ,UISearchBarDelegate ,UITableViewDataSource,UITableViewDelegate,MKLocalSearchCompleterDelegate{
     
-
     
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var sugestTableView: UITableView!
-    var searchCompleter = MKLocalSearchCompleter()
+    
+    @IBOutlet weak var sugesttableView: UITableView!
+    
+var searchCompleter = MKLocalSearchCompleter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sugestTableView.delegate = self
-        sugestTableView.dataSource = self
+        sugesttableView.delegate = self
+        sugesttableView.dataSource = self
         searchCompleter.delegate = self
         searchBar.delegate = self
     
@@ -45,7 +45,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 }
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = sugestTableView.dequeueReusableCell(withIdentifier: "sugestCell" ,for: indexPath)
+    let cell = sugesttableView.dequeueReusableCell(withIdentifier: "sugestcell3" ,for: indexPath)
     let completion = searchCompleter.results[indexPath.row]
     
     cell.textLabel?.text = completion.title
@@ -60,7 +60,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         let preVC = self.presentingViewController as!AddViewController
         
         
-        preVC.Place1.text = completion.title
+        preVC.Place3?.text = completion.title
         self.dismiss(animated: true, completion: nil)
         print ("ok")
     }
@@ -69,7 +69,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
        
     
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
-           sugestTableView.reloadData()
+           sugesttableView.reloadData()
         print("読み込んだよ")
        }
         
@@ -82,3 +82,4 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
  
 }
+
