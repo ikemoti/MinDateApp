@@ -11,9 +11,6 @@ import Firebase
 
 class detailCellViewController: UIViewController {
 
-    
-    
-    
     @IBOutlet weak var cellDateName: UILabel!
     @IBOutlet weak var cellDatePlace1: UILabel!
     @IBOutlet weak var cellDatePlace2: UILabel!

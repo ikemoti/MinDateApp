@@ -15,7 +15,6 @@ class sugesttViewController: UIViewController,UISearchBarDelegate ,UITableViewDa
     
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var sugestTableView: UITableView!
     var searchCompleter = MKLocalSearchCompleter()
     

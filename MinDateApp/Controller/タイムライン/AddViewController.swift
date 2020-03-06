@@ -38,7 +38,7 @@ class AddViewController: UIViewController,UITextFieldDelegate{
        
     }
     
-    //投稿機能
+    //投稿機能追加
     @IBAction func postcontent() {
 //        let contentMemo = Memo.text!
         let DateName = dateName.text!

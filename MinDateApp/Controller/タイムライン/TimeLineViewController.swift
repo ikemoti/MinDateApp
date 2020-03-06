@@ -31,8 +31,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         database = Firestore.firestore()
         tableview.delegate = self
         tableview.dataSource = self
-        print (me)
-        
+      
         tableview.rowHeight = 100
         
         

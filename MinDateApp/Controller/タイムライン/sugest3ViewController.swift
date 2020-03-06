@@ -58,8 +58,6 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         let completion = searchCompleter.results[indexPath.row]
         print ("\(completion.title)")
         let preVC = self.presentingViewController as!AddViewController
-        
-        
         preVC.Place3?.text = completion.title
         self.dismiss(animated: true, completion: nil)
         print ("ok")

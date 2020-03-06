@@ -19,7 +19,6 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         mailadressSI.delegate = self
         passwordSI.delegate = self
-
         auth = Auth.auth()
         
     }

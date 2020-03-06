@@ -14,7 +14,6 @@ class suggest2ViewController: UIViewController ,UISearchBarDelegate ,UITableView
     
 
     @IBOutlet weak var searchbar: UISearchBar!
-    
     @IBOutlet weak var tableView: UITableView!
     
      

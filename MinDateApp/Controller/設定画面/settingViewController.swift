@@ -70,7 +70,7 @@ class settingViewController: UIViewController,UITextFieldDelegate {
         usernameTextField.resignFirstResponder()
         return true
     }
-    
+    //
     @IBAction func changeusername() {
         let newUserName = usernameTextField.text!
                Firestore.firestore().collection("users").document(me.userID).setData([

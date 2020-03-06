@@ -12,9 +12,6 @@ import MapKit
 class sugest5ViewController: UIViewController,UISearchBarDelegate ,UITableViewDataSource,UITableViewDelegate,MKLocalSearchCompleterDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    
-    
     @IBOutlet weak var sugestTbleView: UITableView!
     
     var searchCompleter = MKLocalSearchCompleter()

@@ -1,0 +1,6 @@
+framework module Pods_MinDateApp {
+  umbrella header "Pods-MinDateApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
