@@ -11,6 +11,8 @@
 		CE5A8616241241F000B09FB8 /* sugest3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A8615241241F000B09FB8 /* sugest3ViewController.swift */; };
 		CE5A86182412434800B09FB8 /* sugest4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86172412434800B09FB8 /* sugest4ViewController.swift */; };
 		CE5A861A2412441100B09FB8 /* sugest5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86192412441100B09FB8 /* sugest5ViewController.swift */; };
+		CE5A861C24135D5C00B09FB8 /* Custom.button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A861B24135D5C00B09FB8 /* Custom.button.swift */; };
+		CE5A86222413A66F00B09FB8 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86212413A66F00B09FB8 /* startViewController.swift */; };
 		CE9349A724064A03005C3A49 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349A624064A03005C3A49 /* AddViewController.swift */; };
 		CE9349AD2407B89C005C3A49 /* tabviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AC2407B89C005C3A49 /* tabviewController.swift */; };
 		CE9349AF2408BBD6005C3A49 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AE2408BBD6005C3A49 /* settingViewController.swift */; };
@@ -36,10 +38,12 @@
 /* Begin PBXFileReference section */
 		B802494D746D647C28DAA219 /* Pods_MinDateApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinDateApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADD64419FC1D5CF7EC2F87F /* Pods-MinDateApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinDateApp.release.xcconfig"; path = "Target Support Files/Pods-MinDateApp/Pods-MinDateApp.release.xcconfig"; sourceTree = "<group>"; };
-		CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = suggest2ViewController.swift; path = MinDateApp/Controller/suggest2ViewController.swift; sourceTree = SOURCE_ROOT; };
+		CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = suggest2ViewController.swift; path = "MinDateApp/Controller/その他/suggest2ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CE5A8615241241F000B09FB8 /* sugest3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sugest3ViewController.swift; sourceTree = "<group>"; };
 		CE5A86172412434800B09FB8 /* sugest4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sugest4ViewController.swift; sourceTree = "<group>"; };
 		CE5A86192412441100B09FB8 /* sugest5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sugest5ViewController.swift; sourceTree = "<group>"; };
+		CE5A861B24135D5C00B09FB8 /* Custom.button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.button.swift; sourceTree = "<group>"; };
+		CE5A86212413A66F00B09FB8 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
 		CE9349A624064A03005C3A49 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CE9349AC2407B89C005C3A49 /* tabviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabviewController.swift; sourceTree = "<group>"; };
 		CE9349AE2408BBD6005C3A49 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
@@ -95,15 +99,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE5A86232413AD6400B09FB8 /* 起動画面 */ = {
+			isa = PBXGroup;
+			children = (
+				CE5A86212413A66F00B09FB8 /* startViewController.swift */,
+				CEC465182404B8DA005D8BE7 /* AccountViewController.swift */,
+				CE9349B8240E73F4005C3A49 /* SignInViewController.swift */,
+			);
+			path = "起動画面";
+			sourceTree = "<group>";
+		};
+		CE5A86242413ADA600B09FB8 /* その他 */ = {
+			isa = PBXGroup;
+			children = (
+				CE9349AC2407B89C005C3A49 /* tabviewController.swift */,
+				CE9349CF2411080C005C3A49 /* sugesttViewController.swift */,
+				CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */,
+				CE5A8615241241F000B09FB8 /* sugest3ViewController.swift */,
+				CE5A86172412434800B09FB8 /* sugest4ViewController.swift */,
+				CE5A86192412441100B09FB8 /* sugest5ViewController.swift */,
+			);
+			path = "その他";
+			sourceTree = "<group>";
+		};
 		CE9349BE240FC321005C3A49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CE5A86232413AD6400B09FB8 /* 起動画面 */,
 				CE9349C3240FCA1D005C3A49 /* タイムライン */,
 				CE9349C4240FCA51005C3A49 /* 設定画面 */,
-				CE9349AC2407B89C005C3A49 /* tabviewController.swift */,
-				CE9349CF2411080C005C3A49 /* sugesttViewController.swift */,
-				CE5A86192412441100B09FB8 /* sugest5ViewController.swift */,
-				CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */,
+				CE5A86242413ADA600B09FB8 /* その他 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC465052404B4D4005D8BE7 /* Main.storyboard */,
+				CE5A861B24135D5C00B09FB8 /* Custom.button.swift */,
 				CE9349B6240D0ED5005C3A49 /* tableview.cell.swift */,
 				CEC4650B2404B4D7005D8BE7 /* Assets.xcassets */,
 				CEC4650D2404B4D7005D8BE7 /* LaunchScreen.storyboard */,
@@ -131,13 +157,9 @@
 		CE9349C3240FCA1D005C3A49 /* タイムライン */ = {
 			isa = PBXGroup;
 			children = (
-				CEC465182404B8DA005D8BE7 /* AccountViewController.swift */,
 				CE9349B2240BA6B4005C3A49 /* detailCellViewController.swift */,
-				CE9349B8240E73F4005C3A49 /* SignInViewController.swift */,
 				CE9349A624064A03005C3A49 /* AddViewController.swift */,
-				CE5A8615241241F000B09FB8 /* sugest3ViewController.swift */,
 				CEC4651E2404BB1D005D8BE7 /* TimeLineViewController.swift */,
-				CE5A86172412434800B09FB8 /* sugest4ViewController.swift */,
 			);
 			path = "タイムライン";
 			sourceTree = "<group>";
@@ -300,11 +322,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9349D02411080C005C3A49 /* sugesttViewController.swift in Sources */,
+				CE5A86222413A66F00B09FB8 /* startViewController.swift in Sources */,
 				CE9349CA24110301005C3A49 /* AccountViewController.swift in Sources */,
 				CE9349C9241102F9005C3A49 /* SignInViewController.swift in Sources */,
 				CE5A8616241241F000B09FB8 /* sugest3ViewController.swift in Sources */,
 				CE9349B7240D0ED5005C3A49 /* tableview.cell.swift in Sources */,
 				CEC465002404B4D4005D8BE7 /* AppDelegate.swift in Sources */,
+				CE5A861C24135D5C00B09FB8 /* Custom.button.swift in Sources */,
 				CE9349AD2407B89C005C3A49 /* tabviewController.swift in Sources */,
 				CEC4651B2404B902005D8BE7 /* AppUser.swift in Sources */,
 				CE5A86182412434800B09FB8 /* sugest4ViewController.swift in Sources */,
