@@ -17,17 +17,19 @@ class AddViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var dateName: UITextField!
    
     
+   
     @IBOutlet weak var Place1: UILabel!
     
     @IBOutlet weak var Place2: UILabel!
     
+    
     @IBOutlet weak var Place3: UILabel!
+    
     
     @IBOutlet weak var Place4: UILabel!
     
     
     @IBOutlet weak var Place5: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,28 @@ class AddViewController: UIViewController,UITextFieldDelegate{
         dateName.delegate = self
       
        
+        
+        
+        
+        
+        
+        
+        self.Place1.layer.borderWidth = 2.0
+               self.Place1.layer.borderColor = UIColor.white.cgColor
+               self.Place1.layer.backgroundColor = UIColor.white.cgColor
+               self.Place2.layer.borderWidth = 2.0
+               self.Place2.layer.borderColor = UIColor.white.cgColor
+               self.Place2.layer.backgroundColor = UIColor.white.cgColor
+               self.Place3.layer.borderWidth = 2.0
+        self.Place3.layer.borderColor = UIColor.white.cgColor
+        self.Place3.layer.backgroundColor = UIColor.white.cgColor
+               self.Place4.layer.borderWidth = 2.0
+               self.Place4.layer.borderColor = UIColor.white.cgColor
+               self.Place4.layer.backgroundColor = UIColor.white.cgColor
+               self.Place5.layer.borderWidth = 2.0
+               self.Place5.layer.borderColor = UIColor.white.cgColor
+               self.Place5.layer.backgroundColor = UIColor.white.cgColor
+             
     }
     
     //投稿機能追加

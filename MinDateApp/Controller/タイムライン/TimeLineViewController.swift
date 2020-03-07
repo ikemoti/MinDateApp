@@ -82,12 +82,6 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
                
                 cell.cellUserName.text = appUser.userName
                 
-                self.imageURL = appUser.userImage
-                
-               
-               
-                let imageURLTest = URL(string: "1583204101373.jpg")
-                cell.cellImageView.sd_setImage(with: imageURLTest)
             }
         }
 //        database.collection("users").document(postArray[indexPath.row].senderID).getDocument { (snapshot, error) in
@@ -122,9 +116,24 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if postArray[indexPath.row].senderID == me.userID,editingStyle == UITableViewCell.EditingStyle.delete{
+            database.collection("posts").document(postArray[indexPath.row].postID).delete(){ err in
+                   if let err = err{
+                       print("Error updating document: \(err)")
+                   }else{
+                       print("Document successfully updated")
+                   }
+               }
+            postArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath] , with: UITableView.RowAnimation.automatic)
+    }
     
- 
+    }
     @IBAction func addVC(_ sender: Any) {
         performSegue(withIdentifier: "ADD", sender: me)
     }
