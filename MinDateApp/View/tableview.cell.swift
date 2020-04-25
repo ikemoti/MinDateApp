@@ -15,5 +15,3 @@ class TVCell:UITableViewCell{
     @IBOutlet weak var cellUserName: UILabel!
     
     }
-
-
