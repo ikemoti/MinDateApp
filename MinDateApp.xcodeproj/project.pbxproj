@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4C6967247CA74500B99D21 /* signUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C6966247CA74500B99D21 /* signUpPresenter.swift */; };
+		0E4C6969247CB1C300B99D21 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C6968247CB1C300B99D21 /* LoginPresenter.swift */; };
+		0E6EEF3B247C0BE600EE0B12 /* Authmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6EEF3A247C0BE600EE0B12 /* Authmodel.swift */; };
 		CE5A861424123DE900B09FB8 /* suggest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */; };
 		CE5A8616241241F000B09FB8 /* sugest3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A8615241241F000B09FB8 /* sugest3ViewController.swift */; };
 		CE5A86182412434800B09FB8 /* sugest4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86172412434800B09FB8 /* sugest4ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E4C6966247CA74500B99D21 /* signUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpPresenter.swift; sourceTree = "<group>"; };
+		0E4C6968247CB1C300B99D21 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		0E6EEF3A247C0BE600EE0B12 /* Authmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authmodel.swift; sourceTree = "<group>"; };
 		B802494D746D647C28DAA219 /* Pods_MinDateApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinDateApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADD64419FC1D5CF7EC2F87F /* Pods-MinDateApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinDateApp.release.xcconfig"; path = "Target Support Files/Pods-MinDateApp/Pods-MinDateApp.release.xcconfig"; sourceTree = "<group>"; };
 		CE5A861324123DE900B09FB8 /* suggest2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = suggest2ViewController.swift; path = "MinDateApp/Controller/その他/suggest2ViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -81,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E4C6965247CA6F800B99D21 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0E4C6966247CA74500B99D21 /* signUpPresenter.swift */,
+				0E4C6968247CB1C300B99D21 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		3EABFE5B5BE3DE5D0FB3E0B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +165,7 @@
 			children = (
 				CEC4651C2404BAE3005D8BE7 /* Post.swift */,
 				CEC4651A2404B902005D8BE7 /* AppUser.swift */,
+				0E6EEF3A247C0BE600EE0B12 /* Authmodel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +209,7 @@
 		CEC464FE2404B4D4005D8BE7 /* MinDateApp */ = {
 			isa = PBXGroup;
 			children = (
+				0E4C6965247CA6F800B99D21 /* Presenter */,
 				CE9349C0240FC344005C3A49 /* Model */,
 				CE9349BF240FC33B005C3A49 /* View */,
 				CE9349BE240FC321005C3A49 /* Controller */,
@@ -217,6 +234,7 @@
 				CEC464F92404B4D4005D8BE7 /* Frameworks */,
 				CEC464FA2404B4D4005D8BE7 /* Resources */,
 				278B58142B1CDDAE5C43534F /* [CP] Embed Pods Frameworks */,
+				0E6EEF3C247C157E00EE0B12 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -275,6 +293,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E6EEF3C247C157E00EE0B12 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
 		278B58142B1CDDAE5C43534F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,8 +359,10 @@
 			files = (
 				CE9349D02411080C005C3A49 /* sugesttViewController.swift in Sources */,
 				CE5A86222413A66F00B09FB8 /* startViewController.swift in Sources */,
+				0E4C6969247CB1C300B99D21 /* LoginPresenter.swift in Sources */,
 				CE9349CA24110301005C3A49 /* AccountViewController.swift in Sources */,
 				CE9349C9241102F9005C3A49 /* SignInViewController.swift in Sources */,
+				0E4C6967247CA74500B99D21 /* signUpPresenter.swift in Sources */,
 				CE5A8616241241F000B09FB8 /* sugest3ViewController.swift in Sources */,
 				CE9349B7240D0ED5005C3A49 /* tableview.cell.swift in Sources */,
 				CEC465002404B4D4005D8BE7 /* AppDelegate.swift in Sources */,
@@ -337,6 +375,7 @@
 				CEC4651F2404BB1D005D8BE7 /* TimeLineViewController.swift in Sources */,
 				CEC4650A2404B4D4005D8BE7 /* MinDateApp.xcdatamodeld in Sources */,
 				CEC4651D2404BAE3005D8BE7 /* Post.swift in Sources */,
+				0E6EEF3B247C0BE600EE0B12 /* Authmodel.swift in Sources */,
 				CE9349AF2408BBD6005C3A49 /* settingViewController.swift in Sources */,
 				CE9349B3240BA6B4005C3A49 /* detailCellViewController.swift in Sources */,
 				CEC465022404B4D4005D8BE7 /* SceneDelegate.swift in Sources */,

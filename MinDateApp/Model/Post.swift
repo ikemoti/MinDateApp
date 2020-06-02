@@ -16,7 +16,6 @@ struct Post {
     let place3:String
     let place4:String
     let place5:String
-//    let contentMemo: String
     let postID: String
     let senderID: String
     
