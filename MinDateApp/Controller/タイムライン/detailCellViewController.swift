@@ -10,35 +10,35 @@ import UIKit
 import Firebase
 
 class detailCellViewController: UIViewController {
-
+    
     @IBOutlet weak var cellDateName: UILabel!
     @IBOutlet weak var cellDatePlace1: UILabel!
     @IBOutlet weak var cellDatePlace2: UILabel!
     @IBOutlet weak var cellDatePlace3: UILabel!
     @IBOutlet weak var cellDatePlace4: UILabel!
     @IBOutlet weak var cellDatePlace5: UILabel!
-     
+    
     var me :AppUser!
-   var database:Firestore!
-   var postArray: [Post] = []
-   var pos :String!
+    var database:Firestore!
+    var postArray: [Post] = []
+    var pos :String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         database = Firestore.firestore()
         
-    
-       database.collection("posts").document(pos).getDocument { (snapshot, error) in
-        if error == nil, let snapshot = snapshot, let data = snapshot.data() {
-            let post = Post(data: data)
-            self.cellDateName.text = post.DateName
-            self.cellDatePlace1.text = post.place1
-            self.cellDatePlace2.text = post.place2
-            self.cellDatePlace3.text = post.place3
-            self.cellDatePlace4.text = post.place4
-            self.cellDatePlace5.text = post.place5
-        }
+        
+        database.collection("posts").document(pos).getDocument { (snapshot, error) in
+            if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+                let post = Post(data: data)
+                self.cellDateName.text = post.DateName
+                self.cellDatePlace1.text = post.place1
+                self.cellDatePlace2.text = post.place2
+                self.cellDatePlace3.text = post.place3
+                self.cellDatePlace4.text = post.place4
+                self.cellDatePlace5.text = post.place5
             }
+        }
         
         
         self.cellDateName.layer.borderWidth = 2.0
@@ -59,28 +59,14 @@ class detailCellViewController: UIViewController {
         self.cellDatePlace5.layer.borderWidth = 2.0
         self.cellDatePlace5.layer.borderColor = UIColor.white.cgColor
         self.cellDatePlace5.layer.backgroundColor = UIColor.white.cgColor
-               
-               
-               
-               
-               
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
+        }
 }
-    
-   
 
 
-    
-  
+
+
+
+
 
 
 

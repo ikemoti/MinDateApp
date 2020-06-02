@@ -15,20 +15,10 @@ class AddViewController: UIViewController,UITextFieldDelegate{
     var me :AppUser!
     var database:Firestore!
     @IBOutlet weak var dateName: UITextField!
-   
-    
-   
     @IBOutlet weak var Place1: UILabel!
-    
     @IBOutlet weak var Place2: UILabel!
-    
-    
     @IBOutlet weak var Place3: UILabel!
-    
-    
     @IBOutlet weak var Place4: UILabel!
-    
-    
     @IBOutlet weak var Place5: UILabel!
     
     override func viewDidLoad() {

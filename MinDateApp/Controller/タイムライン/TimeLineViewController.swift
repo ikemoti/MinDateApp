@@ -97,8 +97,6 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //
         
         return cell
-      
-       
     }
     
     

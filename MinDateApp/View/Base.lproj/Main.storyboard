@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P3Y-1y-Nwq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P3Y-1y-Nwq">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="-2514.4000000000001" y="888.91625615763553"/>
         </scene>
-        <!--Account View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="AccountViewController" customModule="MinDateApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="SignUpViewController" customModule="MinDateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +108,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="registerButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lpf-ye-hzJ"/>
+                                    <action selector="signUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Hf-gt-n74"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,8 +117,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="plS-pT-Y8n"/>
                     <connections>
-                        <outlet property="Password" destination="Gab-N2-2ih" id="pJV-lX-etp"/>
-                        <outlet property="mailadress" destination="jM0-Pg-scK" id="uTS-jd-D3g"/>
+                        <outlet property="Password" destination="Gab-N2-2ih" id="IBv-7l-1M1"/>
+                        <outlet property="mailadress" destination="jM0-Pg-scK" id="ImS-zJ-hhq"/>
                         <segue destination="xTm-Ko-MRd" kind="presentation" identifier="TimeLine" modalPresentationStyle="fullScreen" id="Bdl-bH-TtJ"/>
                     </connections>
                 </viewController>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="-1533.5999999999999" y="602.21674876847294"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--Login In View Controller-->
         <scene sceneID="MTK-Mr-NPA">
             <objects>
-                <viewController id="wWd-sn-q15" customClass="SignInViewController" customModule="MinDateApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wWd-sn-q15" customClass="LoginInViewController" customModule="MinDateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Us0-Ti-Rdr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="SignInButton" destination="wWd-sn-q15" eventType="touchUpInside" id="DcO-3U-mtm"/>
+                                    <action selector="LoginButtonTapped:" destination="wWd-sn-q15" eventType="touchUpInside" id="166-fL-3At"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -169,9 +169,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="2qx-ej-IbK"/>
                     <connections>
-                        <outlet property="mailadressSI" destination="IJE-pq-w5b" id="Byj-oz-GRA"/>
-                        <outlet property="passwordSI" destination="fhg-Hb-Ose" id="Wd9-lO-Fv6"/>
-                        <segue destination="xTm-Ko-MRd" kind="presentation" identifier="TimeLine" modalPresentationStyle="fullScreen" id="36j-L9-Q4R"/>
+                        <outlet property="Password" destination="fhg-Hb-Ose" id="0dL-8c-vOi"/>
+                        <outlet property="mailadress" destination="IJE-pq-w5b" id="fmC-Is-bOe"/>
+                        <segue destination="xTm-Ko-MRd" kind="presentation" identifier="SignUp" modalPresentationStyle="fullScreen" id="36j-L9-Q4R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgb-RZ-RHF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -714,10 +714,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sugestCell" id="Tuh-Fl-FDK">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tuh-Fl-FDK" id="DLZ-X9-JOj">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -761,10 +761,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sugestcell2" id="Wvf-Ot-iJY">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wvf-Ot-iJY" id="grM-u1-o8X">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -803,10 +803,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sugestcell4" id="991-m4-VCG">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="394" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="991-m4-VCG" id="j7p-vb-wjI">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -845,10 +845,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sugestcell5" id="81L-Gn-rbs">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="81L-Gn-rbs" id="ol5-vz-Jby">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -887,10 +887,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sugestcell3" id="Qmd-sk-BjD">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qmd-sk-BjD" id="KiG-Tf-nvm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -911,12 +911,12 @@
             <point key="canvasLocation" x="4020" y="-121"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bdl-bH-TtJ"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrow.down" catalog="system" width="60" height="64"/>
+        <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="スクリーンショット 2020-03-07 17.37.59" width="288" height="195"/>
         <image name="デート画像" width="375" height="400"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="36j-L9-Q4R"/>
-    </inferredMetricsTieBreakers>
 </document>
