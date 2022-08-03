@@ -16,6 +16,7 @@
 		CE5A861A2412441100B09FB8 /* sugest5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86192412441100B09FB8 /* sugest5ViewController.swift */; };
 		CE5A861C24135D5C00B09FB8 /* Custom.button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A861B24135D5C00B09FB8 /* Custom.button.swift */; };
 		CE5A86222413A66F00B09FB8 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86212413A66F00B09FB8 /* startViewController.swift */; };
+		CE5A86262418755500B09FB8 /* customTbaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A86252418755500B09FB8 /* customTbaleView.swift */; };
 		CE9349A724064A03005C3A49 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349A624064A03005C3A49 /* AddViewController.swift */; };
 		CE9349AD2407B89C005C3A49 /* tabviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AC2407B89C005C3A49 /* tabviewController.swift */; };
 		CE9349AF2408BBD6005C3A49 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9349AE2408BBD6005C3A49 /* settingViewController.swift */; };
@@ -50,6 +51,7 @@
 		CE5A86192412441100B09FB8 /* sugest5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sugest5ViewController.swift; sourceTree = "<group>"; };
 		CE5A861B24135D5C00B09FB8 /* Custom.button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.button.swift; sourceTree = "<group>"; };
 		CE5A86212413A66F00B09FB8 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
+		CE5A86252418755500B09FB8 /* customTbaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTbaleView.swift; sourceTree = "<group>"; };
 		CE9349A624064A03005C3A49 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CE9349AC2407B89C005C3A49 /* tabviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabviewController.swift; sourceTree = "<group>"; };
 		CE9349AE2408BBD6005C3A49 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				CEC465052404B4D4005D8BE7 /* Main.storyboard */,
 				CE5A861B24135D5C00B09FB8 /* Custom.button.swift */,
+				CE5A86252418755500B09FB8 /* customTbaleView.swift */,
 				CE9349B6240D0ED5005C3A49 /* tableview.cell.swift */,
 				CEC4650B2404B4D7005D8BE7 /* Assets.xcassets */,
 				CEC4650D2404B4D7005D8BE7 /* LaunchScreen.storyboard */,
@@ -372,6 +375,7 @@
 				CE5A86182412434800B09FB8 /* sugest4ViewController.swift in Sources */,
 				CE9349A724064A03005C3A49 /* AddViewController.swift in Sources */,
 				CE5A861424123DE900B09FB8 /* suggest2ViewController.swift in Sources */,
+				CE5A86262418755500B09FB8 /* customTbaleView.swift in Sources */,
 				CEC4651F2404BB1D005D8BE7 /* TimeLineViewController.swift in Sources */,
 				CEC4650A2404B4D4005D8BE7 /* MinDateApp.xcdatamodeld in Sources */,
 				CEC4651D2404BAE3005D8BE7 /* Post.swift in Sources */,
